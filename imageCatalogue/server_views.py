@@ -1,12 +1,8 @@
 import json
 from flask import request
-from server import app
-
-# from models import database
-from models import ImageUris
-
-# from imageCatalogue.database import *
-from manage_db import get_all, add_instance, delete_instance, edit_instance
+from imageCatalogue.server import app
+from imageCatalogue.models import ImageUris
+from imageCatalogue.manage_db import get_all, add_instance, delete_instance, edit_instance
 
 
 @app.route("/images/list", methods=["GET"])
