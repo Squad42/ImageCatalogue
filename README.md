@@ -54,4 +54,13 @@ CREATE DATABASE db_catalogue_example OWNER test_user;
 GRANT ALL PRIVILEGES ON DATABASE db_catalogue_example TO test_user;
 ```
 
-
+# RUN
+When initiating runs, one should be in root
+## Run flask server
+```
+python -m imageCatalogue.server
+```
+## Run pytest(s)
+```
+python -m pytest
+```
