@@ -1,8 +1,19 @@
 import json
-from flask import request
+from flask import request, render_template
 from imageCatalogue.server import app
 from imageCatalogue.models import ImageUris
 from imageCatalogue.manage_db import get_all, add_instance, delete_instance, edit_instance
+
+
+@app.route("/", methods=["GET"])
+def index():
+    api_list = [
+        "LIST of all image-uri entries in db >> <br/> /images/list ",
+        "ADD new entry to uri database (POST - json object) >> <br/> /images/add ",
+        "EDIT existing uri of enrty with id=image_uri_id ( PATCH - json new_uri ) >> <br/> /images/edit/:image_uri_id",
+        "REMOVE uri entry with id=image_uri_id from database ( DELETE - json uri ) >> <br/> /images/remove/:image_uri_id",
+    ]
+    return render_template("index.html", api_list=api_list)
 
 
 @app.route("/images/list", methods=["GET"])

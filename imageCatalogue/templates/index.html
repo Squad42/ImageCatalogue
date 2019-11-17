@@ -26,23 +26,13 @@
             <h3 class="text-muted">Microsevices - upload API demo</h3>
         </div>
         <div class="jumbotron">
-            <h2>Upload Your Files Bro</h2>
-            <p class="lead"></p>
-            <form id="upload-image-form" method="POST" enctype="multipart/form-data">
-
-                <div class="container">
-                    <label for="file-picker" class="btn btn-success text-center">Select file for upload</label>
-                    <input id="file-picker" type="file" name="user_image">
-                </div>
-
-                <!-- SUBMIT FORM VALUES -->
-                <button type="submit" name="aws" class="btn  btn-warning pull-right"
-                    formaction="{{ url_for('upload_image', service='aws', version='v1') }}">Upload
-                    via AWS S3</button>
-                <button type="submit" name="dbx" class="btn  btn-info pull-right"
-                    formaction="{{ url_for('upload_image', service='dbx', version='v2') }}">Upload
-                    via DROPBOX</button>
-            </form>
+            <h1>Image URI database API</h1>
+            </br>
+            <hr>
+            {% for api_ref in api_list %}
+            <p>{{ api_ref | safe }} </p>
+            <hr>
+            {% endfor %}
 
         </div>
     </div>
