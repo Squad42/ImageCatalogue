@@ -21,7 +21,7 @@ def demo_info_milestone_1():
     json_info = {
         "clani": ["mb2551", "rt0875"],
         "opis_projekta": "Najin projekt implementira portal za hranjenje, urejanje in deljenje fotografij",
-        "mikrostoritve": ["http://34.77.38.10:5000/upload", "http://35.190.207.89:5001/images/"],
+        "mikrostoritve": ["http://34.77.38.10:5000/upload", "http://35.190.207.89:5001/images"],
         "github": [
             "https://github.com/Squad42/ImageUpload",
             "https://github.com/Squad42/ImageCatalogue",
