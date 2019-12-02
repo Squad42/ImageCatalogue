@@ -3,6 +3,7 @@ from pathlib import Path
 
 # APP_ROOT = Path(__file__).resolve().parent
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
+
 # DEFAULT_UPLOAD_FOLDER = Path("media/users/")
 # DEFAULT_DOWNLOADS_FOLDER = Path("media/downloads/")
 
@@ -28,6 +29,7 @@ class Config(object):
     TESTING = False
     CSRF_ENABLED = True
     SECRET_KEY = "this-really-needs-to-be-changed"
+    DB_ONLINE = False
 
 
 class ProductionConfig(Config):
@@ -63,6 +65,8 @@ class DevelopmentConfig(Config):
     DATABASE_CONNECTION_URI = "postgresql+psycopg2://{user}:{password}@{host}:{port}/{db}".format(
         user=DB_USER, password=DB_PASSWORD, host=DB_HOST_IP, port=DB_HOST_PORT, db=DB_NAME
     )
+
+    DB_INITIALIZE = os.environ["POSTGRES_INITIALIZE"]
 
 
 class TestingConfig(Config):
