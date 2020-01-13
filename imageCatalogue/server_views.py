@@ -54,7 +54,7 @@ def fetch():
             "user_id": image_uri.user_id,
             "img_uri": image_uri.img_uri,
             "service": image_uri.service,
-            "create-on": image_uri.created_datetime.strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "created-on": image_uri.created_datetime.strftime("%Y-%m-%dT%H:%M:%SZ"),
             "private": image_uri.private,
         }
 
@@ -74,8 +74,17 @@ def add():
     user_id = data["user_id"]
     img_uri = data["img_uri"]
     service = data["service"]
+    created_datetime = data["created_datetime"]
+    private = data["private"]
 
-    add_instance(ImageUris, user_id=user_id, img_uri=img_uri, service=service)
+    add_instance(
+        ImageUris,
+        user_id=user_id,
+        img_uri=img_uri,
+        service=service,
+        created_datetime=created_datetime,
+        private=private,
+    )
     return json.dumps("Added"), 200
 
 

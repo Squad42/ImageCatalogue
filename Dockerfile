@@ -7,12 +7,15 @@ COPY requirements.txt /imageCatalogue/
 WORKDIR /imageCatalogue/
 
 
-RUN apk add build-base python-dev py-pip jpeg-dev zlib-dev 
-RUN apk --no-cache add postgresql-dev
-ENV LIBRARY_PATH=/lib:/usr/lib
 RUN pip3 install --upgrade pip
-RUN pip3 install psycopg2
-RUN pip3 install psycopg2-binary
+
+RUN apk update \
+    && apk add --virtual build-deps gcc python3-dev musl-dev \
+    && apk add postgresql \
+    && apk add postgresql-dev \
+    && pip install psycopg2 \
+    && apk del build-deps
+
 RUN pip3 install -r requirements.txt
 
 EXPOSE 5001
