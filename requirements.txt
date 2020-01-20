@@ -5,3 +5,5 @@ psycopg2==2.8.4
 python-consul
 python-logstash-async
 prometheus_flask_exporter
+Flask-JWT==0.3.2
+
