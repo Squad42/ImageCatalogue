@@ -112,3 +112,57 @@ def edit(image_uri_id):
     new_img_uri = data["img_uri"]
     edit_instance(ImageUris, id=image_uri_id, img_uri=new_img_uri)
     return json.dumps("Edited"), 200
+
+@app.route("/health/liveness")
+def liveness():
+    healthStatus = None
+    try:
+        if "consul_server" in app.config and app.config["consul_server"] is not None:
+            index = None
+            index, data = app.config["consul_server"].kv.get("imageCatalogue/alive", index=index)
+            if data is not None:
+                healthStatus = data["Value"]
+            else:
+                healthStatus = "true"
+        else:
+            healthStatus = "true"
+    except:
+        healthStatus = "false"        
+
+    if "false" in str(healthStatus).lower():
+        response = jsonify(
+        service_status="FAIL",
+        service_code=503)
+        return response, 503
+    else:
+        response = jsonify(
+        service_status="PASS",
+        service_code=200)
+        return response, 200
+    
+@app.route("/health/readiness")
+def readiness():
+    healthStatus = None
+    try:
+        if "consul_server" in app.config and app.config["consul_server"] is not None:
+            index = None
+            index, data = app.config["consul_server"].kv.get("imageCatalogue/ready", index=index)
+            if data is not None:
+                healthStatus = data["Value"]
+            else:
+                healthStatus = "true"
+        else:
+            healthStatus = "true"
+    except:
+        healthStatus = "false"         
+
+    if "false" in str(healthStatus).lower():
+        response = jsonify(
+        service_status="FAIL",
+        service_code=503)
+        return response, 503
+    else:
+        response = jsonify(
+        service_status="PASS",
+        service_code=200)
+        return response, 200    
