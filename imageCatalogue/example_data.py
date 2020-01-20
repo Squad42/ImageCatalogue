@@ -7,7 +7,7 @@ def db_load_example_data(app, db):
         ImageUris(
             1,
             "Dropbox",
-            "https://www.dropbox.com/s/uwlodj52lmc0oxi/c3c.png?dl=0",
+            "https://www.dropbox.com/s/uwlodj52lmc0oxi/c3c.png?dl=1",
             "2019-11-22T16:14:03Z",
             False,
         ),
@@ -21,14 +21,14 @@ def db_load_example_data(app, db):
         ImageUris(
             3,
             "Dropbox",
-            "https://www.dropbox.com/s/9fccuidhjbbqdaq/173533.jpg?dl=0",
+            "https://www.dropbox.com/s/9fccuidhjbbqdaq/173533.jpg?dl=1",
             "2019-11-22T16:14:03Z",
             False,
         ),
         ImageUris(
             4,
             "Dropbox",
-            "https://www.dropbox.com/s/fs2tdth9187a6tr/deer-artwork.jpg?dl=0",
+            "https://www.dropbox.com/s/fs2tdth9187a6tr/deer-artwork.jpg?dl=1",
             "2019-11-22T16:14:03Z",
             False,
         ),
@@ -42,14 +42,14 @@ def db_load_example_data(app, db):
         ImageUris(
             6,
             "Dropbox",
-            "https://www.dropbox.com/s/x0m8xm91wuvps0z/gdmlock.jpg?dl=0",
+            "https://www.dropbox.com/s/x0m8xm91wuvps0z/gdmlock.jpg?dl=1",
             "2019-11-22T16:14:03Z",
             False,
         ),
         ImageUris(
             7,
             "Dropbox",
-            "https://www.dropbox.com/s/fqpguogsr8mdct2/roa050118fea-corvette-08-1522693637.jpg?dl=0",
+            "https://www.dropbox.com/s/fqpguogsr8mdct2/roa050118fea-corvette-08-1522693637.jpg?dl=1",
             "2019-11-22T16:14:03Z",
             False,
         ),
@@ -63,7 +63,7 @@ def db_load_example_data(app, db):
         ImageUris(
             9,
             "Dropbox",
-            "https://www.dropbox.com/s/u90wot3rttdcbbo/wp1828915-programmer-wallpapers.png?dl=0",
+            "https://www.dropbox.com/s/u90wot3rttdcbbo/wp1828915-programmer-wallpapers.png?dl=1",
             "2019-11-22T16:14:03Z",
             False,
         ),
